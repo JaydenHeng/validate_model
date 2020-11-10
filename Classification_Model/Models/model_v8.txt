@@ -1,0 +1,162 @@
+robot@robot-HP-EliteBook-Folio-1040-G2 ~/Desktop/WorkDir/Image_Classification $ source start_training.sh 
+created virtual environment CPython3.5.2.final.0-64 in 159ms
+  creator CPython3Posix(dest=/home/robot/Desktop/WorkDir/Image_Classification/venv, clear=False, global=True)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/robot/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators CShellActivator,BashActivator,XonshActivator,PowerShellActivator,FishActivator,PythonActivator
+Using TensorFlow backend.
+2.1.0
+/home/robot/Desktop/WorkDir/Image_Classification/venv/lib/python3.5/site-packages/tensorflow/__init__.py
+/home/robot/.keras/datasets/wrist_band_photos
+Found 3822 images belonging to 6 classes.
+Found 951 images belonging to 6 classes.
+{'tulips': 5, 'daisy': 1, 'dandelion': 2, 'contiband': 0, 'sunflowers': 4, 'roses': 3}
+contiband
+daisy
+dandelion
+roses
+sunflowers
+tulips
+2020-04-20 12:42:53.010299: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-20 12:42:53.014406: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294485000 Hz
+2020-04-20 12:42:53.014680: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4b59cd0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-20 12:42:53.014703: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+mobilenetv2_1.40_224 (Model) (None, 7, 7, 1792)        4363712   
+_________________________________________________________________
+conv2d (Conv2D)              (None, 5, 5, 128)         2064512   
+_________________________________________________________________
+dropout (Dropout)            (None, 5, 5, 128)         0         
+_________________________________________________________________
+global_average_pooling2d (Gl (None, 128)               0         
+_________________________________________________________________
+dense (Dense)                (None, 6)                 774       
+=================================================================
+Total params: 6,428,998
+Trainable params: 2,065,286
+Non-trainable params: 4,363,712
+_________________________________________________________________
+Number of trainable variables = 4
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+Train for 120 steps, validate for 30 steps
+Epoch 1/20
+2020-04-20 12:42:59.486648: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 231211008 exceeds 10% of system memory.
+2020-04-20 12:42:59.799543: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 235358208 exceeds 10% of system memory.
+  1/120 [..............................] - ETA: 8:31 - loss: 2.0696 - accuracy: 0.21882020-04-20 12:43:01.447874: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 231211008 exceeds 10% of system memory.
+2020-04-20 12:43:01.690609: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 235358208 exceeds 10% of system memory.
+  2/120 [..............................] - ETA: 6:06 - loss: 4.5174 - accuracy: 0.25002020-04-20 12:43:03.343811: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 231211008 exceeds 10% of system memory.
+120/120 [==============================] - 278s 2s/step - loss: 0.6946 - accuracy: 0.8302 - val_loss: 0.5024 - val_accuracy: 0.8402
+Epoch 2/20
+120/120 [==============================] - 276s 2s/step - loss: 0.1628 - accuracy: 0.9411 - val_loss: 0.4765 - val_accuracy: 0.8570
+Epoch 3/20
+120/120 [==============================] - 277s 2s/step - loss: 0.0920 - accuracy: 0.9665 - val_loss: 0.5501 - val_accuracy: 0.8601
+Epoch 4/20
+120/120 [==============================] - 277s 2s/step - loss: 0.0531 - accuracy: 0.9830 - val_loss: 0.5805 - val_accuracy: 0.8612
+Epoch 5/20
+120/120 [==============================] - 278s 2s/step - loss: 0.0200 - accuracy: 0.9961 - val_loss: 0.5754 - val_accuracy: 0.8717
+Epoch 6/20
+120/120 [==============================] - 276s 2s/step - loss: 0.0080 - accuracy: 0.9997 - val_loss: 0.7974 - val_accuracy: 0.8538
+Epoch 7/20
+120/120 [==============================] - 276s 2s/step - loss: 0.0033 - accuracy: 1.0000 - val_loss: 0.6373 - val_accuracy: 0.8738
+Epoch 8/20
+120/120 [==============================] - 277s 2s/step - loss: 0.0025 - accuracy: 0.9997 - val_loss: 0.6511 - val_accuracy: 0.8696
+Epoch 9/20
+120/120 [==============================] - 277s 2s/step - loss: 0.0020 - accuracy: 1.0000 - val_loss: 0.6394 - val_accuracy: 0.8738
+Epoch 10/20
+120/120 [==============================] - 280s 2s/step - loss: 0.0014 - accuracy: 1.0000 - val_loss: 0.6537 - val_accuracy: 0.8738
+Epoch 11/20
+120/120 [==============================] - 278s 2s/step - loss: 0.0010 - accuracy: 1.0000 - val_loss: 0.7226 - val_accuracy: 0.8728
+Epoch 12/20
+120/120 [==============================] - 274s 2s/step - loss: 8.3550e-04 - accuracy: 1.0000 - val_loss: 0.6911 - val_accuracy: 0.8749
+Epoch 13/20
+120/120 [==============================] - 274s 2s/step - loss: 6.4736e-04 - accuracy: 1.0000 - val_loss: 0.7355 - val_accuracy: 0.8717
+Epoch 14/20
+120/120 [==============================] - 274s 2s/step - loss: 5.4136e-04 - accuracy: 1.0000 - val_loss: 0.7260 - val_accuracy: 0.8749
+Epoch 15/20
+120/120 [==============================] - 275s 2s/step - loss: 5.5577e-04 - accuracy: 1.0000 - val_loss: 0.7861 - val_accuracy: 0.8675
+Epoch 16/20
+120/120 [==============================] - 273s 2s/step - loss: 4.3591e-04 - accuracy: 1.0000 - val_loss: 0.7547 - val_accuracy: 0.8707
+Epoch 17/20
+120/120 [==============================] - 273s 2s/step - loss: 3.7140e-04 - accuracy: 1.0000 - val_loss: 0.7801 - val_accuracy: 0.8675
+Epoch 18/20
+120/120 [==============================] - 277s 2s/step - loss: 3.6461e-04 - accuracy: 1.0000 - val_loss: 0.7775 - val_accuracy: 0.8696
+Epoch 19/20
+120/120 [==============================] - 273s 2s/step - loss: 2.8157e-04 - accuracy: 1.0000 - val_loss: 0.8067 - val_accuracy: 0.8696
+Epoch 20/20
+120/120 [==============================] - 273s 2s/step - loss: 2.7579e-04 - accuracy: 1.0000 - val_loss: 0.7839 - val_accuracy: 0.8728
+Number of layers in the base model:  155
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+mobilenetv2_1.40_224 (Model) (None, 7, 7, 1792)        4363712   
+_________________________________________________________________
+conv2d (Conv2D)              (None, 5, 5, 128)         2064512   
+_________________________________________________________________
+dropout (Dropout)            (None, 5, 5, 128)         0         
+_________________________________________________________________
+global_average_pooling2d (Gl (None, 128)               0         
+_________________________________________________________________
+dense (Dense)                (None, 6)                 774       
+=================================================================
+Total params: 6,428,998
+Trainable params: 5,692,790
+Non-trainable params: 736,208
+_________________________________________________________________
+Number of trainable variables = 60
+<keras_preprocessing.image.directory_iterator.DirectoryIterator object at 0x7fb7cfcda748>
+<keras_preprocessing.image.directory_iterator.DirectoryIterator object at 0x7fb7cfcda828>
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+Train for 120 steps, validate for 30 steps
+Epoch 1/10
+120/120 [==============================] - 399s 3s/step - loss: 3.2054e-04 - accuracy: 1.0000 - val_loss: 0.7237 - val_accuracy: 0.8770
+Epoch 2/10
+120/120 [==============================] - 397s 3s/step - loss: 9.8029e-05 - accuracy: 1.0000 - val_loss: 0.6663 - val_accuracy: 0.8843
+Epoch 3/10
+120/120 [==============================] - 396s 3s/step - loss: 5.2232e-05 - accuracy: 1.0000 - val_loss: 0.6301 - val_accuracy: 0.8917
+Epoch 4/10
+120/120 [==============================] - 397s 3s/step - loss: 3.8395e-05 - accuracy: 1.0000 - val_loss: 0.5945 - val_accuracy: 0.8991
+Epoch 5/10
+120/120 [==============================] - 396s 3s/step - loss: 2.4285e-05 - accuracy: 1.0000 - val_loss: 0.5848 - val_accuracy: 0.9001
+Epoch 6/10
+120/120 [==============================] - 397s 3s/step - loss: 1.9596e-05 - accuracy: 1.0000 - val_loss: 0.5679 - val_accuracy: 0.9012
+Epoch 7/10
+120/120 [==============================] - 399s 3s/step - loss: 1.4615e-05 - accuracy: 1.0000 - val_loss: 0.5590 - val_accuracy: 0.9043
+Epoch 8/10
+120/120 [==============================] - 399s 3s/step - loss: 1.1182e-05 - accuracy: 1.0000 - val_loss: 0.5550 - val_accuracy: 0.9043
+Epoch 9/10
+120/120 [==============================] - 396s 3s/step - loss: 1.0534e-05 - accuracy: 1.0000 - val_loss: 0.5533 - val_accuracy: 0.9064
+Epoch 10/10
+120/120 [==============================] - 399s 3s/step - loss: 7.8536e-06 - accuracy: 1.0000 - val_loss: 0.5502 - val_accuracy: 0.9064
+2020-04-20 15:21:19.987857: W tensorflow/python/util/util.cc:319] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From /home/robot/Desktop/WorkDir/Image_Classification/venv/lib/python3.5/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1786: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2020-04-20 15:21:38.422587: I tensorflow/core/grappler/devices.cc:60] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA support)
+2020-04-20 15:21:38.422714: I tensorflow/core/grappler/clusters/single_machine.cc:356] Starting new session
+2020-04-20 15:21:38.479025: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:814] Optimization results for grappler item: graph_to_optimize
+2020-04-20 15:21:38.479077: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   function_optimizer: Graph size after: 1054 nodes (787), 2127 edges (1860), time = 32.563ms.
+2020-04-20 15:21:38.479083: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   function_optimizer: function_optimizer did nothing. time = 0.615ms.
+2020-04-20 15:21:39.354522: I tensorflow/core/grappler/devices.cc:60] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA support)
+2020-04-20 15:21:39.354631: I tensorflow/core/grappler/clusters/single_machine.cc:356] Starting new session
+2020-04-20 15:21:39.599987: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:814] Optimization results for grappler item: graph_to_optimize
+2020-04-20 15:21:39.600121: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   constant_folding: Graph size after: 704 nodes (-264), 1513 edges (-528), time = 144.073ms.
+2020-04-20 15:21:39.600226: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   constant_folding: Graph size after: 704 nodes (0), 1513 edges (0), time = 45.873ms.
+(venv) robot@robot-HP-EliteBook-Folio-1040-G2 ~/Desktop/WorkDir/Image_Classification $ 
+

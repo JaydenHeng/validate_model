@@ -1,0 +1,178 @@
+robot@robot-HP-EliteBook-Folio-1040-G2 ~/Desktop/WorkDir/Image_Classification $ source start_training.sh 
+created virtual environment CPython3.5.2.final.0-64 in 151ms
+  creator CPython3Posix(dest=/home/robot/Desktop/WorkDir/Image_Classification/venv, clear=False, global=True)
+  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/robot/.local/share/virtualenv/seed-app-data/v1.0.1)
+  activators PythonActivator,FishActivator,BashActivator,PowerShellActivator,CShellActivator,XonshActivator
+Using TensorFlow backend.
+2.1.0
+/home/robot/Desktop/WorkDir/Image_Classification/venv/lib/python3.5/site-packages/tensorflow/__init__.py
+/home/robot/.keras/datasets/wrist_band_photos
+Found 3822 images belonging to 6 classes.
+Found 951 images belonging to 6 classes.
+{'sunflowers': 4, 'roses': 3, 'dandelion': 2, 'contiband': 0, 'daisy': 1, 'tulips': 5}
+contiband
+daisy
+dandelion
+roses
+sunflowers
+tulips
+2020-04-23 04:40:40.059103: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-23 04:40:40.063177: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2294590000 Hz
+2020-04-23 04:40:40.063588: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4ebae80 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-23 04:40:40.063611: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+mobilenetv2_1.00_224 (Model) (None, 7, 7, 1280)        2257984   
+_________________________________________________________________
+conv2d (Conv2D)              (None, 5, 5, 128)         1474688   
+_________________________________________________________________
+dropout (Dropout)            (None, 5, 5, 128)         0         
+_________________________________________________________________
+global_average_pooling2d (Gl (None, 128)               0         
+_________________________________________________________________
+dense (Dense)                (None, 6)                 774       
+=================================================================
+Total params: 3,733,446
+Trainable params: 1,475,462
+Non-trainable params: 2,257,984
+_________________________________________________________________
+Number of trainable variables = 4
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+Train for 120 steps, validate for 30 steps
+Epoch 1/30
+2020-04-23 04:40:47.825404: I tensorflow/core/profiler/lib/profiler_session.cc:225] Profiler session started.
+120/120 [==============================] - 179s 1s/step - loss: 0.5091 - accuracy: 0.8221 - val_loss: 0.5644 - val_accuracy: 0.7971
+Epoch 2/30
+120/120 [==============================] - 176s 1s/step - loss: 0.2106 - accuracy: 0.9267 - val_loss: 0.5220 - val_accuracy: 0.8202
+Epoch 3/30
+120/120 [==============================] - 176s 1s/step - loss: 0.1105 - accuracy: 0.9634 - val_loss: 0.6687 - val_accuracy: 0.7865
+Epoch 4/30
+120/120 [==============================] - 178s 1s/step - loss: 0.0598 - accuracy: 0.9872 - val_loss: 0.5155 - val_accuracy: 0.8391
+Epoch 5/30
+120/120 [==============================] - 192s 2s/step - loss: 0.0281 - accuracy: 0.9976 - val_loss: 0.6478 - val_accuracy: 0.8223
+Epoch 6/30
+120/120 [==============================] - 187s 2s/step - loss: 0.0227 - accuracy: 0.9982 - val_loss: 0.5758 - val_accuracy: 0.8349
+Epoch 7/30
+120/120 [==============================] - 191s 2s/step - loss: 0.0115 - accuracy: 0.9997 - val_loss: 0.6227 - val_accuracy: 0.8349
+Epoch 8/30
+120/120 [==============================] - 184s 2s/step - loss: 0.0081 - accuracy: 0.9997 - val_loss: 0.6567 - val_accuracy: 0.8254
+Epoch 9/30
+120/120 [==============================] - 175s 1s/step - loss: 0.0056 - accuracy: 1.0000 - val_loss: 0.6814 - val_accuracy: 0.8275
+Epoch 10/30
+120/120 [==============================] - 180s 1s/step - loss: 0.0044 - accuracy: 1.0000 - val_loss: 0.6835 - val_accuracy: 0.8349
+Epoch 11/30
+120/120 [==============================] - 188s 2s/step - loss: 0.0039 - accuracy: 1.0000 - val_loss: 0.6719 - val_accuracy: 0.8391
+Epoch 12/30
+120/120 [==============================] - 189s 2s/step - loss: 0.0031 - accuracy: 1.0000 - val_loss: 0.7161 - val_accuracy: 0.8297
+Epoch 13/30
+120/120 [==============================] - 188s 2s/step - loss: 0.0027 - accuracy: 1.0000 - val_loss: 0.7261 - val_accuracy: 0.8265
+Epoch 14/30
+120/120 [==============================] - 204s 2s/step - loss: 0.0023 - accuracy: 1.0000 - val_loss: 0.7361 - val_accuracy: 0.8286
+Epoch 15/30
+120/120 [==============================] - 188s 2s/step - loss: 0.0021 - accuracy: 1.0000 - val_loss: 0.7309 - val_accuracy: 0.8286
+Epoch 16/30
+120/120 [==============================] - 184s 2s/step - loss: 0.0018 - accuracy: 1.0000 - val_loss: 0.7422 - val_accuracy: 0.8307
+Epoch 17/30
+120/120 [==============================] - 184s 2s/step - loss: 0.0016 - accuracy: 1.0000 - val_loss: 0.7639 - val_accuracy: 0.8275
+Epoch 18/30
+120/120 [==============================] - 176s 1s/step - loss: 0.0015 - accuracy: 1.0000 - val_loss: 0.7764 - val_accuracy: 0.8275
+Epoch 19/30
+120/120 [==============================] - 176s 1s/step - loss: 0.0013 - accuracy: 1.0000 - val_loss: 0.7588 - val_accuracy: 0.8318
+Epoch 20/30
+120/120 [==============================] - 176s 1s/step - loss: 0.0011 - accuracy: 1.0000 - val_loss: 0.7872 - val_accuracy: 0.8286
+Epoch 21/30
+120/120 [==============================] - 179s 1s/step - loss: 0.0011 - accuracy: 1.0000 - val_loss: 0.7688 - val_accuracy: 0.8328
+Epoch 22/30
+120/120 [==============================] - 179s 1s/step - loss: 0.0010 - accuracy: 1.0000 - val_loss: 0.7828 - val_accuracy: 0.8328
+Epoch 23/30
+120/120 [==============================] - 179s 1s/step - loss: 8.3072e-04 - accuracy: 1.0000 - val_loss: 0.8141 - val_accuracy: 0.8254
+Epoch 24/30
+120/120 [==============================] - 179s 1s/step - loss: 8.0008e-04 - accuracy: 1.0000 - val_loss: 0.8091 - val_accuracy: 0.8286
+Epoch 25/30
+120/120 [==============================] - 179s 1s/step - loss: 7.0024e-04 - accuracy: 1.0000 - val_loss: 0.8025 - val_accuracy: 0.8307
+Epoch 26/30
+120/120 [==============================] - 179s 1s/step - loss: 6.3528e-04 - accuracy: 1.0000 - val_loss: 0.8271 - val_accuracy: 0.8265
+Epoch 27/30
+120/120 [==============================] - 180s 1s/step - loss: 5.6459e-04 - accuracy: 1.0000 - val_loss: 0.8259 - val_accuracy: 0.8307
+Epoch 28/30
+120/120 [==============================] - 180s 2s/step - loss: 5.3437e-04 - accuracy: 1.0000 - val_loss: 0.8334 - val_accuracy: 0.8297
+Epoch 29/30
+120/120 [==============================] - 180s 2s/step - loss: 5.1888e-04 - accuracy: 1.0000 - val_loss: 0.8310 - val_accuracy: 0.8286
+Epoch 30/30
+120/120 [==============================] - 180s 2s/step - loss: 4.6006e-04 - accuracy: 1.0000 - val_loss: 0.8342 - val_accuracy: 0.8286
+Number of layers in the base model:  155
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+mobilenetv2_1.00_224 (Model) (None, 7, 7, 1280)        2257984   
+_________________________________________________________________
+conv2d (Conv2D)              (None, 5, 5, 128)         1474688   
+_________________________________________________________________
+dropout (Dropout)            (None, 5, 5, 128)         0         
+_________________________________________________________________
+global_average_pooling2d (Gl (None, 128)               0         
+_________________________________________________________________
+dense (Dense)                (None, 6)                 774       
+=================================================================
+Total params: 3,733,446
+Trainable params: 3,338,054
+Non-trainable params: 395,392
+_________________________________________________________________
+Number of trainable variables = 60
+<keras_preprocessing.image.directory_iterator.DirectoryIterator object at 0x7fd90953d7b8>
+<keras_preprocessing.image.directory_iterator.DirectoryIterator object at 0x7fd90953d898>
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+WARNING:tensorflow:sample_weight modes were coerced from
+  ...
+    to  
+  ['...']
+Train for 120 steps, validate for 30 steps
+Epoch 1/10
+120/120 [==============================] - 251s 2s/step - loss: 5.8619e-04 - accuracy: 1.0000 - val_loss: 0.7755 - val_accuracy: 0.8496
+Epoch 2/10
+120/120 [==============================] - 247s 2s/step - loss: 1.8481e-04 - accuracy: 1.0000 - val_loss: 0.7390 - val_accuracy: 0.8580
+Epoch 3/10
+120/120 [==============================] - 249s 2s/step - loss: 1.0206e-04 - accuracy: 1.0000 - val_loss: 0.7134 - val_accuracy: 0.8644
+Epoch 4/10
+120/120 [==============================] - 249s 2s/step - loss: 6.7390e-05 - accuracy: 1.0000 - val_loss: 0.6844 - val_accuracy: 0.8749
+Epoch 5/10
+120/120 [==============================] - 248s 2s/step - loss: 5.0767e-05 - accuracy: 1.0000 - val_loss: 0.6719 - val_accuracy: 0.8759
+Epoch 6/10
+120/120 [==============================] - 248s 2s/step - loss: 4.1044e-05 - accuracy: 1.0000 - val_loss: 0.6608 - val_accuracy: 0.8780
+Epoch 7/10
+120/120 [==============================] - 248s 2s/step - loss: 3.3414e-05 - accuracy: 1.0000 - val_loss: 0.6528 - val_accuracy: 0.8801
+Epoch 8/10
+120/120 [==============================] - 248s 2s/step - loss: 2.4239e-05 - accuracy: 1.0000 - val_loss: 0.6455 - val_accuracy: 0.8812
+Epoch 9/10
+120/120 [==============================] - 248s 2s/step - loss: 2.0915e-05 - accuracy: 1.0000 - val_loss: 0.6404 - val_accuracy: 0.8822
+Epoch 10/10
+120/120 [==============================] - 247s 2s/step - loss: 1.7734e-05 - accuracy: 1.0000 - val_loss: 0.6356 - val_accuracy: 0.8812
+2020-04-23 06:53:25.184829: W tensorflow/python/util/util.cc:319] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+WARNING:tensorflow:From /home/robot/Desktop/WorkDir/Image_Classification/venv/lib/python3.5/site-packages/tensorflow_core/python/ops/resource_variable_ops.py:1786: calling BaseResourceVariable.__init__ (from tensorflow.python.ops.resource_variable_ops) with constraint is deprecated and will be removed in a future version.
+Instructions for updating:
+If using Keras pass *_constraint arguments to layers.
+2020-04-23 06:53:43.539325: I tensorflow/core/grappler/devices.cc:60] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA support)
+2020-04-23 06:53:43.539454: I tensorflow/core/grappler/clusters/single_machine.cc:356] Starting new session
+2020-04-23 06:53:43.594347: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:814] Optimization results for grappler item: graph_to_optimize
+2020-04-23 06:53:43.594398: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   function_optimizer: Graph size after: 1053 nodes (786), 2125 edges (1858), time = 32.233ms.
+2020-04-23 06:53:43.594405: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   function_optimizer: function_optimizer did nothing. time = 0.601ms.
+2020-04-23 06:53:44.404168: I tensorflow/core/grappler/devices.cc:60] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0 (Note: TensorFlow was not compiled with CUDA support)
+2020-04-23 06:53:44.404276: I tensorflow/core/grappler/clusters/single_machine.cc:356] Starting new session
+2020-04-23 06:53:44.572575: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:814] Optimization results for grappler item: graph_to_optimize
+2020-04-23 06:53:44.572717: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   constant_folding: Graph size after: 703 nodes (-264), 1511 edges (-528), time = 102.968ms.
+2020-04-23 06:53:44.572725: I tensorflow/core/grappler/optimizers/meta_optimizer.cc:816]   constant_folding: Graph size after: 703 nodes (0), 1511 edges (0), time = 34.608ms.
+(venv) robot@robot-HP-EliteBook-Folio-1040-G2 ~/Desktop/WorkDir/Image_Classification $ 
+
